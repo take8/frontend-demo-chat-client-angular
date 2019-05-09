@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'frontend-demo-chat-client-angular';
+  channels = ['general', 'random'];
 }
