@@ -37,3 +37,9 @@ ng g interface shared/models/User
 ```sh
 ng g service services/message
 ```
+
+## パイプの追加方法
+
+```sh
+ng g pipe pipes/reverse
+```
