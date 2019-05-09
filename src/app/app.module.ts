@@ -14,11 +14,13 @@ import { AppComponent } from './app.component';
 import { ChannelComponent } from './channel/channel.component';
 
 import { MessageService } from './services/message.service';
+import { MessageFeedComponent } from './message-feed/message-feed.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChannelComponent
+    ChannelComponent,
+    MessageFeedComponent
   ],
   imports: [
     BrowserModule,
