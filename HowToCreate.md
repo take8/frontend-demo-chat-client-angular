@@ -23,3 +23,11 @@ ng serve --open
 ```sh
 ng g component channel
 ```
+
+## モデルの追加方法
+
+取得するメッセージ用の型定義ファイルを作成する場合などで行う。
+
+```sh
+ng g interface shared/models/User
+```
