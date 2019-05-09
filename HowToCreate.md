@@ -31,3 +31,9 @@ ng g component channel
 ```sh
 ng g interface shared/models/User
 ```
+
+## サービスの追加方法
+
+```sh
+ng g service services/message
+```

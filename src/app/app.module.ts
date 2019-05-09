@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -12,6 +13,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChannelComponent } from './channel/channel.component';
 
+import { MessageService } from './services/message.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +22,7 @@ import { ChannelComponent } from './channel/channel.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
 
     BrowserAnimationsModule,
@@ -26,7 +30,7 @@ import { ChannelComponent } from './channel/channel.component';
     MatSidenavModule,
     MatToolbarModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
