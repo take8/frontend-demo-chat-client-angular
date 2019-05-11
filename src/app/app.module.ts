@@ -6,7 +6,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
   MatListModule,
   MatSidenavModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatCardModule
 } from "@angular/material";
 
 import { AppRoutingModule } from './app-routing.module';
@@ -32,7 +33,8 @@ import { ReversePipe } from './pipes/reverse.pipe';
     BrowserAnimationsModule,
     MatListModule,
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatCardModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

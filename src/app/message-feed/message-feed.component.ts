@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { Observable } from 'rxjs';
+import 'rxjs/add/operator/switchMap';
+
+import { MessageService } from '../services/message.service';
+import { Message } from '../shared/models/message';
 
 @Component({
   selector: 'app-message-feed',
@@ -6,10 +13,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./message-feed.component.css']
 })
 export class MessageFeedComponent implements OnInit {
+  public messagesObservable: Observable<Message[]>
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private messageService: MessageService
+  ) { }
 
   ngOnInit() {
+    this.messagesObservable = this.route.params.switchMap(
+      res => this.messageService.fetch(res['channelName'])
+    );
   }
 
 }
