@@ -43,3 +43,11 @@ ng g service services/message
 ```sh
 ng g pipe pipes/reverse
 ```
+
+## エラーに関するメモ
+
+`messagesObservable`を`messageObservable`と書き間違えた場合、わかりやすいエラーが出なかった。
+
+```sh
+<mat-card *ngIf="(messageObservable | async) as messages">
+```
