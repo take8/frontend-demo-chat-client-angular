@@ -20,7 +20,10 @@ export class MessageFormComponent implements OnInit {
     if (this.message) {
       // subscribe() で Observable から値を取得する
       this.messageService.post(this.channelName, this.message).subscribe(
-        _ => this.message = '',
+        _ => {
+          this.message = '',
+            this.messageService.notify()
+        },
         error => console.log(error)
       );
     }

@@ -20,10 +20,17 @@ export class MessageFeedComponent implements OnInit {
     private messageService: MessageService
   ) { }
 
-  ngOnInit() {
+  refresh() {
     this.messagesObservable = this.route.params.switchMap(
       res => this.messageService.fetch(res['channelName'])
     );
+  }
+
+  ngOnInit() {
+    this.refresh();
+    this.messageService.waiting.subscribe(_ => {
+      this.refresh();
+    });
   }
 
 }
