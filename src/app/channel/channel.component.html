@@ -1,2 +1,4 @@
 <h2 class="channel">#{{ name }}</h2>
 <app-message-feed></app-message-feed>
+<!-- [a1]="a2" で親の a2 を子の a1 として受け渡す -->
+<app-message-form [channelName]="name"></app-message-form>

@@ -1,3 +1,7 @@
-<p>
-  message-form works!
-</p>
+<mat-form-field class="form">
+  <!-- ngModel: 入力値とコンポーネントのプロパティを紐付ける -->
+  <input [(ngModel)]="message" matInput placeholder="Type your message...">
+</mat-form-field>
+<button color="default" mat-raised-button (click)="sendMessage()" [disabled]="!message">
+  Send
+</button>

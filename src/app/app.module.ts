@@ -1,13 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
   MatListModule,
   MatSidenavModule,
   MatToolbarModule,
-  MatCardModule
+  MatCardModule,
+  MatButtonModule,
+  MatFormFieldModule,
+  MatInputModule
 } from "@angular/material";
 
 import { AppRoutingModule } from './app-routing.module';
@@ -31,12 +35,16 @@ import { MessageFormComponent } from './message-form/message-form.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    FormsModule,
 
     BrowserAnimationsModule,
     MatListModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
