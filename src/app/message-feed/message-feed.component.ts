@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Observable } from 'rxjs';
-import 'rxjs/add/operator/switchMap';
+import { switchMap } from 'rxjs/operators';
 
 import { MessageService } from '../services/message.service';
 import { Message } from '../shared/models/message';
@@ -21,8 +21,8 @@ export class MessageFeedComponent implements OnInit {
   ) { }
 
   refresh() {
-    this.messagesObservable = this.route.params.switchMap(
-      res => this.messageService.fetch(res['channelName'])
+    this.messagesObservable = this.route.params.pipe(
+      switchMap(res => this.messageService.fetch(res['channelName']))
     );
   }
 
