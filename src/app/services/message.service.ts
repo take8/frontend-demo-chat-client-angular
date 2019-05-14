@@ -4,13 +4,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 
 import { Message } from '../shared/models/message';
+import { AppConst } from '../app-const';
 
 // @Injectable でサービスとして認識される
 @Injectable({
   providedIn: 'root'
 })
 export class MessageService {
-  private BASE_URL = "https://us-central1-frontend-demo-chat.cloudfunctions.net/v1";
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
@@ -24,11 +24,11 @@ export class MessageService {
   constructor(private http: HttpClient) { }
 
   fetch(channelName: string): Observable<Message[]> {
-    return this.http.get<Message[]>(`${this.BASE_URL}/channels/${channelName}/messages`);
+    return this.http.get<Message[]>(`${AppConst.API_ENDPOINT}/channels/${channelName}/messages`);
   }
 
   post(channelName: string, body: string) {
-    return this.http.post<Message>(`${this.BASE_URL}/channels/${channelName}/messages`, { 'body': body }, this.httpOptions);
+    return this.http.post<Message>(`${AppConst.API_ENDPOINT}/channels/${channelName}/messages`, { 'body': body }, this.httpOptions);
   }
 
   notify() {
