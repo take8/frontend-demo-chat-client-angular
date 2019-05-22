@@ -51,3 +51,9 @@ ng g pipe pipes/reverse
 ```sh
 <mat-card *ngIf="(messageObservable | async) as messages">
 ```
+
+## AoTコンパイル
+
+本番環境に配備する場合は事前にコンパイルする必要がある。  
+`--aot`をつけてビルドすれば良い。  
+ただ、`ng build --prod`で暗黙的に指定されているので、あまり意識する必要なし。
